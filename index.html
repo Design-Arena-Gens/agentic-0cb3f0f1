@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>macOS WebOS</title>
+  <meta name="theme-color" content="#0a84ff" />
+  <link rel="icon" href="images/icons/finder.svg" />
+  <link rel="stylesheet" href="css/main.css" />
+</head>
+<body>
+  <div id="desktop" class="desktop">
+    <div id="wallpaper" class="wallpaper"></div>
+
+    <div id="menubar" class="menubar" role="menubar" aria-label="Application menu bar">
+      <div class="menu-left">
+        <button class="apple" aria-label="Open Apple menu" data-menu="apple">&#63743;</button>
+        <div class="app-title" id="active-app-title">Finder</div>
+        <div class="menus" id="app-menus"></div>
+      </div>
+      <div class="menu-right">
+        <div id="status-area" class="status-area"></div>
+        <div id="clock" class="clock" aria-live="polite"></div>
+        <div id="status-icons" class="status-icons"></div>
+      </div>
+    </div>
+
+    <div id="windows" class="windows" aria-live="polite"></div>
+
+    <div id="dock" class="dock" role="toolbar" aria-label="Dock toolbar">
+      <div id="dock-items" class="dock-items"></div>
+      <div class="dock-divider"></div>
+      <div id="dock-trash" class="dock-trash" title="Trash">
+        <img src="images/icons/trash.svg" alt="Trash" />
+      </div>
+    </div>
+
+    <div id="mission-control" class="mission-control hidden" aria-hidden="true"></div>
+
+    <div id="context-menu" class="context-menu hidden" role="menu" aria-hidden="true"></div>
+
+    <div id="dialogs" class="dialogs" aria-live="assertive"></div>
+  </div>
+
+  <script src="js/core/utils.js"></script>
+  <script src="js/core/state.js"></script>
+  <script src="js/core/eventBus.js"></script>
+  <script src="js/core/vfs.js"></script>
+  <script src="js/core/appRegistry.js"></script>
+  <script src="js/core/windowManager.js"></script>
+  <script src="js/core/menubar.js"></script>
+  <script src="js/core/dock.js"></script>
+  <script src="js/core/missionControl.js"></script>
+  <script src="js/core/desktop.js"></script>
+  <script src="js/core/keyboard.js"></script>
+
+  <script src="js/apps/calculator.js"></script>
+  <script src="js/apps/notepad.js"></script>
+  <script src="js/apps/finder.js"></script>
+  <script src="js/apps/terminal.js"></script>
+  <script src="js/apps/preferences.js"></script>
+
+  <script>
+    window.addEventListener('DOMContentLoaded', () => {
+      window.WebOS.init();
+    });
+  </script>
+</body>
+</html>
